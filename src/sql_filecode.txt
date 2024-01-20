@@ -1,0 +1,29 @@
+CREATE SCHEMA ssbankltd;
+
+USE ssbankltd;
+
+CREATE TABLE accounts (
+	account_number BIGINT NOT NULL PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    balance DECIMAL(10, 2) NOT NULL,
+    security_pin CHAR(4) NOT NULL
+);
+
+DESCRIBE accounts;
+
+CREATE TABLE users (
+	full_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL PRIMARY KEY,
+    password VARCHAR(255) NOT NULL
+);
+
+DROP TABLE user;
+
+DESCRIBE users;
+
+SHOW TABLES;
+
+SELECT * FROM accounts;
+
+

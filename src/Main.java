@@ -19,36 +19,46 @@ public class Main {
 
 
 
-        System.out.println("Choose a day (1-7):");
-        int day = sc.nextInt();
-
-        switch (day) {
-            case 1:
-                System.out.println("Monday");
-                break;
-            case 2:
-                System.out.println("Tuesday");
-                break;
-            case 3:
-                System.out.println("Wednesday");
-                break;
-            case 4:
-                System.out.println("Thursday");
-                break;
-            case 5:
-                System.out.println("Friday");
-                break;
-            case 6:
-                System.out.println("Saturday");
-                break;
-            default:
-                System.out.println("Invalid day");
-                // No break statement here!
+//        System.out.println("Choose a day (1-7):");
+//        int day = sc.nextInt();
+//
+//        switch (day) {
+//            case 1:
+//                System.out.println("Monday");
 //                break;
-        }
+//            case 2:
+//                System.out.println("Tuesday");
+//                break;
+//            case 3:
+//                System.out.println("Wednesday");
+//                break;
+//            case 4:
+//                System.out.println("Thursday");
+//                break;
+//            case 5:
+//                System.out.println("Friday");
+//                break;
+//            case 6:
+//                System.out.println("Saturday");
+//                break;
+//            default:
+//                System.out.println("Invalid day");
+//                // No break statement here!
+////                break;
+//        }
+//
+//        System.out.println("End of program.");
+//        sc.close();
 
-        System.out.println("End of program.");
-        sc.close();
+//        sc.nextLine();
+//        sc.nextLine();
+        System.out.print("Enter Full Name: ");
+        sc.nextLine();
+        System.out.print("Enter Initial Amount: ");
+//        sc.nextDouble();
+        sc.nextLine();
+        System.out.print("Enter Security Pin: ");
+        sc.nextLine();
     }
 
     public static void processInput(Scanner sc) {

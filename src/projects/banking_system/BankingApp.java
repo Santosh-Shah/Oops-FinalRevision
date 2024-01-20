@@ -44,7 +44,22 @@ public class BankingApp {
                         users.register();
                         break;
                     case 2:
-//                        email = users.login();
+                        email = users.login();
+                        if (email != null) {
+                            System.out.println();
+                            System.out.println("You are Logged In");
+                            if (!accounts.accountExist(email)) {
+                                System.out.println();
+                                System.out.println("1. Open a new Bank Account");
+                                System.out.println("2. Exit");
+                                if (sc.nextInt() == 1) {
+                                    accNo = accounts.openAccount(email);
+                                    System.out.println("Account Created Successfully!");
+                                    System.out.println("Your Account Number is: " + accNo);
+                                }
+                            }
+                        }
+
                     case 3:
                         System.out.println("Thank you for using SS Bank ltd!");
                         System.out.println("Exiting System!");
