@@ -1,4 +1,4 @@
-package car_rental_system;
+package projects.car_rental_system;
 
 public class Rental {
     private Car car;

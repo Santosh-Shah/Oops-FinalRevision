@@ -1,102 +1,58 @@
-import java.util.ArrayList;
-
-abstract class Employee {
-        private String name;
-        private int id;
-
-        public Employee(String name, int id) {
-            this.name = name;
-            this.id = id;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public abstract double calculateSalary();
-
-        @Override
-        public String toString() {
-            return "Employee [Name = " + name + " Id = " + id + " Salary = " + calculateSalary() + "]\n";
-        }
-    }
-
-    class FullTimeEmployee extends Employee {
-        private double monthlySalary;
-
-        FullTimeEmployee(double monthlySalary, String name, int id) {
-            super(name, id);
-            this.monthlySalary = monthlySalary;
-        }
-
-        @Override
-        public double calculateSalary() {
-            return monthlySalary;
-        }
-    }
-
-    class PartTimeEmployee extends Employee {
-        private double hrsWorked;
-        private double hrsRate;
-
-        PartTimeEmployee(double hrsWorked, double hrsRate, String name, int id) {
-            super(name, id);
-            this.hrsWorked = hrsWorked;
-            this.hrsRate = hrsRate;
-        }
-
-        @Override
-        public double calculateSalary() {
-            return hrsRate * hrsWorked;
-        }
-    }
-
-    class PayRollSystem {
-        ArrayList<Employee> employeeList;
-
-        PayRollSystem() {
-            employeeList = new ArrayList<>();
-        }
-
-        public void addEmployee(Employee employee) {
-            employeeList.add(employee);
-        }
-
-        public void deleteEmployee(int id) {
-            Employee empDeletable = null;
-            for (Employee empList : employeeList) {
-                if (empList.getId() == id) {
-                    empDeletable = empList;
-                    break;
-                }
-            }
-
-            if (empDeletable != null) {
-                employeeList.remove(empDeletable);
-            }
-        }
-
-        public void displayEmployees() {
-            for (Employee employee : employeeList) {
-                System.out.print(employee + " ");
-            }
-        }
-    }
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        PayRollSystem payRollSystem = new PayRollSystem();
-        FullTimeEmployee fEmp1 = new FullTimeEmployee(50000, "Hariom Shah", 2);
-        PartTimeEmployee pEmp1 = new PartTimeEmployee(5, 1000, "Santosh Shah", 1);
-        payRollSystem.addEmployee(fEmp1);
-        payRollSystem.addEmployee(pEmp1);
-//        payRollSystem.displayEmployees();
+        Scanner sc = new Scanner(System.in);
+//        processInput(sc);
 
-//        payRollSystem.deleteEmployee(1);
-        payRollSystem.displayEmployees();
+//        switch (sc.nextInt()) {
+//            case 1:
+//                System.out.println("you this");
+//                break;
+//            case 2:
+//                System.out.println("You that");
+//                break;
+//            default:
+//                System.out.println("you idiot");
+//                break;
+//        }
+
+
+
+        System.out.println("Choose a day (1-7):");
+        int day = sc.nextInt();
+
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            default:
+                System.out.println("Invalid day");
+                // No break statement here!
+//                break;
+        }
+
+        System.out.println("End of program.");
+        sc.close();
+    }
+
+    public static void processInput(Scanner sc) {
+        System.out.println("Enter a value: ");
+        System.out.println("you value: " + sc.nextInt());
     }
 }
